@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react'
 import { useState } from 'react';
 import img from './img/register.jpg'
-import style from './Register.module.css'
+
 
 
 function Register() {
@@ -18,11 +18,7 @@ function Register() {
     e.preventDefault();
     let {data} = await axios.post("https://knowledge-saraha.herokuapp.com/users/signUp",user); 
     
-    if(data.message !='success'){
-      swal({
-        text: {data.message}, 
-      });
-    }
+    
   }
   let getFormValue = (e)=>{
     let myUser={...user};
